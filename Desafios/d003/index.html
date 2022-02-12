@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antecessor e Sucessor</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif; /* Defini familia de fontes usadas */
+            font-size: 1em; /* Define o tamanho da fonte */
+        }
+
+        button {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+            padding: 15px; /* Defini tamanho do botão */
+        }
+    </style>
+</head>
+<body>
+    <h1>Antecessor e Sucessor</h1>
+    <button onclick="numero()">Antecessor e Sucessor</button>
+    <script>
+        function numero(){
+            let numero = Number(prompt('Informe um número:')) /* Abre caixa de pergunta Number indica que o valor informado é visto como número */
+            let ant = numero - 1 // Antecessor de número informado
+            let sus = numero + 1 // Sucessor de número informado
+            alert(`O número informado é ${numero}, seu antecessor é ${ant} e o seu sucessor é ${sus}!!`) /* Emite mensagem de alerta no navegador */
+        }
+    </script>
+</body>
+</html>

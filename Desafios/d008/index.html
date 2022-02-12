@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio desconto de 10%</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3em;
+            background-color: blue;
+            color: cornsilk;
+            text-align: center;
+        }
+
+        button {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5em;
+            background-color: blue;
+            color: cornsilk;
+            padding: 10px;
+        }
+
+        section {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular Desconto</h1>
+    <button onclick="desconto()">Desconto de 10%</button>
+    <section id="resultado">
+        <p>O resultado será apresentado aqui...</p>
+    </section>
+
+    <script>
+        function desconto(){ // Calculo de desconto de 10% em produtos
+            
+            let res = document.getElementById('resultado')
+            let produto = prompt('Qual o produto você vai comprar?')
+            let valor = Number(prompt(`Qual o valor de ${produto}?`))
+            res.innerHTML = `
+            <p>
+                <strong>Calculando o desconto de 10% para ${produto}</strong><br>
+            </p>
+            <p>
+                O preço original era de R$ ${valor}.<br>
+            </p>
+            <p>
+                Você acaba de ganhar R$ ${(valor*0.10).toFixed(2).replace('.',',')} de desconto (-10%).<br>
+            </p>
+            <p>
+                No fim, você vai pagar R$ ${(valor-(valor*0.10)).toFixed(2).replace('.',',')} no produto ${produto}.
+            </p>
+            `
+        }
+    </script>
+</body>
+</html>

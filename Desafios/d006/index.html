@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio conversor de temperatura</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3em;
+        }
+
+        button {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.3em;
+            padding: 10px;
+            color: rgba(8, 6, 99, 0.986);
+        }
+
+        section {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de temperatura</h1>
+    <button onclick="converter()">Converter</button>
+    <section id="resultado">
+        <p>O Resultado aparecerá aqui!</p>
+    </section>
+
+    <script> // Código JavaScript
+        function converter(){
+            let res = document.getElementById('resultado') // Faz acesso a ligação entre JavaScript e HTML atraves da tag <section>
+            let temp = Number(prompt('Informe uma temperatura em graus celsius (°C):'))
+            res.innerHTML = `
+            <p>
+                <strong>A temperatura ${temp.toFixed(2).replace('.',',')} °C, corresponde a...</strong><br>
+            </p>
+            <p>
+                ${(temp+273).toFixed(2).replace('.',',')} °K (Kelvin)<br>
+            </p>
+            <p>
+                ${(1.8*temp+32).toFixed(2).replace('.',',')} °F (Farenheit)
+            </p>
+            `
+        }
+    </script>
+</body>
+</html>

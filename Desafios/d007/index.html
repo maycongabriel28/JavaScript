@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio do conversor de moeda</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3em;
+        }
+
+        button {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5em;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+        }
+
+        section {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ &#x27A1 US$</h1>
+    <button onclick="convert()">Converter</button>
+    <section id="resultado">
+        <p>O resultado será apresentado aqui...</p>
+    </section>
+    <script>
+        let dolar = Number(prompt('Qual a cotação do dólar (US$) hoje?')) // Cotação do dólar
+        function convert(){
+            let res = document.getElementById('resultado')
+            let valor = Number(prompt('Quanto R$ você tem em sua carteira?'))
+            res.innerHTML = `
+            <p>
+                Você poderá comprar <strong>US$ ${(valor/dolar).toFixed(2).replace('.',',')}!</strong>
+            </p>`
+        }
+    </script>
+</body>
+</html>

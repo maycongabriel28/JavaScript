@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de Bhaskara</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3em;
+            background-color: lightgoldenrodyellow;
+            color: darkslateblue;
+            text-align: center;
+        }
+
+        button {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5em;
+            color: darkslateblue;
+            background-color: lightgoldenrodyellow;
+            padding: 10px;
+        }
+
+        mark {
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <button onclick="calculo()">Calcular</button>
+    <section id="resultado">
+        <p>
+            <strong>
+                 Considerando uma equação no formato <em>ax<sup>2</sup> + bx + c = 0</em>, aperte o botão acima para calcular o valor de <mark>Delta (&#x1F6C6)</mark>.
+            </strong>
+        </p>
+    </section>
+
+    <script>
+        let res = document.getElementById('resultado')
+        let a = Number(prompt('Qual é o valor de a?'))
+        let b = Number(prompt('Qual é o valor de b?'))
+        let c = Number(prompt('Qual é o valor de c?'))
+
+        res.innerHTML = `
+        <p>
+            <strong>Resolvendo Bhaskara</strong><br>
+        </p>
+        <p>
+            Fórmula de Delta: <mark><em>&#x1F6C6 = b<sup>2</sup> - 4ac.</em></mark><br>
+        </p>
+        <p>
+            A equação atual é: <em>${a}x<sup>2</sup> + ${b}x + ${c} = 0.</em><br>
+        </p>
+        <p>
+            O cálculo realizado séra: <em>&#x1F6C6 = ${b}<sup>2</sup> - 4*${a}*${c}.</em><br>
+        </p>
+        <p>
+            O valor calculado foi <mark><em>&#x1F6C6 = ${Math.pow(b,2) - (4*a*c)}.</em></marK> 
+        </p>
+        `
+    </script>
+</body>
+</html>

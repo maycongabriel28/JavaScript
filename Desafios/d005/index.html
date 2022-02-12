@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio conversor de medidas</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1em;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3em;
+        }
+
+        section {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1.5em;
+        }
+
+        button {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1em;
+            color: coral;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="converter()">Converter</button> <!-- Botão usado para informar distância em metros é fazer a conversão para Km, Hm, Dam, dm, cm e mm-->
+    <section id="resultado"> <!-- Seção onde séra apresentado o resultado o resultado na tela do navegador -->
+        <p>O Resultado séra apresentado aqui...</p>
+    </section>
+
+    <script> // Programa JavaScript
+        function converter(){ // função para converter unidades de medidas
+            let res = document.getElementById("resultado") // Faz acesso a tag <section> e exibe na tela do navegador
+            let medida = Number(prompt('Informe uma medida em metros (m):'))
+            //medida.toFixed(2).replace('.',',') troca . por , para mostra resultado
+            res.innerHTML = `
+            <p>
+                <strong>A distância de ${medida.toFixed(3).replace('.',',')} em metros, corresponde a...</strong><br>
+            </p> 
+            <p>
+                ${(medida*10).toFixed(3).replace('.',',')} decímetros (dm)<br>
+            </p>
+            <p>
+                ${(medida*10*10).toFixed(3).replace('.',',')} centímetros (cm)<br>
+            </p>
+            <p>
+                ${(medida*10*10*10).toFixed(3).replace('.',',')} milímetros (mm)<br>
+            </p>
+            <p>
+                ${(medida/10).toFixed(3).replace('.',',')} decâmetos (dam)<br>
+            </p>
+            <p>
+                ${(medida/10/10).toFixed(3).replace('.',',')} hectômetos (hm)<br>
+            </p>
+            <p>
+                ${(medida/10/10/10).toFixed(3).replace('.',',')} quilômetros (km)
+            </p>
+            `
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionando botão</title>
+    <style>
+        body {
+            font: 1em arial, serif; /* Define tamanh oda fonter na página e tipo de fonte */
+        }
+
+        button{
+            font-size: 1em; /* Define tamanho da palavra do botão */
+            padding: 20px; /* Define tamanho do botão na tela do navegador */ 
+        }
+    </style>
+</head>
+<body>
+    <h1>Interagindo com botão</h1>
+    <button onclick="clicou()">Clique em mim!!</button> <!-- Adiciona botão na tela do navegador -->
+    <script>
+        function clicou(){ // Função usada para executar ação ao ser afetuada a chamada da função
+            window.alert('Clicou em botão!!') // Emite mensagem de alerta no navegador
+        }
+    </script>
+    
+</body>
+</html>

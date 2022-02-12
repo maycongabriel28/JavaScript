@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio calculadora de troco</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+        }
+
+        button {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1em;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de troco</h1>
+    <button onclick="troco()">Comprar produto</button>
+    <script>
+        function troco(){
+            let produto = prompt('Qual produto você quer comprar?')
+            let valor = Number(prompt(`Quanto custa ${produto} que você vai compara?`))
+            let dinheiro = Number(prompt(`Qual valor você deu para pagar ${produto}?`))
+
+            if (dinheiro < valor){ /* Dinheiro dado para pagar foi insufuciente */
+                alert(`Valor ${produto} é R$ ${valor}, valor dado para pagamento R$ ${dinheiro}, logo não é possível comprar ${produto}`)
+            } else{ // Dinhbeiro suficiente para comaprar dinheiro > valor
+                alert(`Valor ${produto} é R$ ${valor}, valor dado para pagamento R$ ${dinheiro}, troco é R$ ${dinheiro - valor}`)
+            }
+        }
+    </script>
+</body>
+</html>
